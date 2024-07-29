@@ -128,52 +128,32 @@
                 </div>
             </div>
 
-            <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
-                <div class="mb-12 p-4 md:w-1/2">
-                    <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="dist/img/portfolio/bbs.jpg" alt="BBS Landing Page" width="w-full">
-                    </div>
-                    <h3>
-                        <a href="https://www.bbsolusindo.com/" class="block mt-5 mb-3 font-semibold text-xl text-dark hover:text-primary truncate" target="_blank">Berkah Bersama Solusindo</a>
-                    </h3>
-                    <p class="font-medium text-base text-secondary">Saya dengan antusias menerima tawaran untuk mengembangkan landing page untuk layanan Jasa Sistem & Design Penerangan terbaik di Jakarta. Proyek ini tidak hanya menantang, tetapi juga memungkinkan saya untuk menggabungkan kreativitas dan keahlian teknis saya untuk menciptakan pengalaman online yang mengesankan.</p>
-                </div>
-                <div class="mb-12 p-4 md:w-1/2">
-                    <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="dist/img/portfolio/infakin.jpg" alt="Infakin" width="w-full">
-                    </div>
-                    <h3>
-                        <a href="https://infak.in/" class="block mt-5 mb-3 font-semibold text-xl text-dark hover:text-primary truncate" target="_blank">Infakin</a>
-                    </h3>
-                    <p class="font-medium text-base text-secondary">Saya turut berkontribusi dalam pembuatan web Infakin selama magang di MSIB Batch 5 di Lembaga Manajemen Infaq Surabaya. Infakin adalah platform penggalangan dana online yang mempermudah proses berdonasi dengan fitur-fitur praktis. Antarmuka yang simpel, pembayaran online yang aman, dan pemantauan kemajuan kampanye menjadikan Infakin sebagai pilihan yang nyaman untuk mendukung aksi kemanusiaan. Saya bangga telah berperan dalam menciptakan solusi yang bermanfaat ini.</p>
-                </div>
-                <div class="mb-12 p-4 md:w-1/2">
-                    <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="dist/img/portfolio/warungbuku.jpg" alt="Warungbuku" width="w-full">
-                    </div>
-                    <h3>
-                        <a href="https://kreasi.nurulfikri.ac.id/muha21082ti/projek-pdpl/" class="block mt-5 mb-3 font-semibold text-xl text-dark hover:text-primary truncate" target="_blank">Warungbuku</a>
-                    </h3>
-                    <p class="font-medium text-base text-secondary">Membangun aplikasi WarungBuku, sebuah platform yang memfasilitasi pembelian buku berdasarkan kategori dengan menggunakan PHP native. Aplikasi ini dirancang untuk memberikan pengalaman yang intuitif dan efisien bagi pengguna yang mencari buku sesuai minat mereka. Dengan WarungBuku, kami berkomitmen untuk memberikan pengalaman belanja buku online yang menyenangkan dan memuaskan bagi setiap pengguna. Sayangnya aplikasi ini belom dilanjutkan untuk pembayaran via browser</p>
-                </div>
-                <div class="mb-12 p-4 md:w-1/2">
-                    <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="dist/img/portfolio/movie-app.jpg" alt="Movie App" width="w-full">
-                    </div>
-                    <h3>
-                        <a href="https://movie-app-ammarayyasy.vercel.app/" class="block mt-5 mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Movie App</a>
-                    </h3>
-                    <p class="font-medium text-base text-secondary">Mengembangkan aplikasi Movie App, sebuah platform yang menyediakan informasi terkini seputar film-film yang sedang populer, tayang, dan mendapat rating tinggi. Aplikasi ini memanfaatkan API dari TMDb untuk menyajikan data yang akurat dan terpercaya. Dengan Movie App, pengguna dapat dengan mudah menjelajahi dunia perfilman dan mendapatkan insight tentang film-film yang paling diminati saat ini. Saya berbangga telah membangun pengalaman informasi film yang memikat melalui aplikasi ini.</p>
-                </div>
-                <div class="mb-12 p-4 md:w-1/2">
-                    <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="dist/img/portfolio/geek.png" alt="Geek" width="w-full">
-                    </div>
-                    <h3>
-                        <a href="https://geek-sepia.vercel.app/" class="block mt-5 mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Geek Application</a>
-                    </h3>
-                    <p class="font-medium text-base text-secondary">Membangun platform Geek, sebuah sumber informasi kampus terkemuka di Indonesia yang juga menyediakan tips & trik bermanfaat. Salah satu fitur utama yang saya kontribusikan adalah tes minat bakat yang membantu pengguna menentukan jurusan yang sesuai dengan minat dan potensi mereka. Dengan Geek, kami berkomitmen untuk memberikan panduan yang komprehensif dan bermanfaat bagi para calon mahasiswa Indonesia. Saya bangga dapat membangun platform ini untuk membantu calon mahasiswa dalam mengambil keputusan yang cerdas mengenai pendidikan mereka.</p>
-                </div>
+            <div id="projects-container" class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        fetch('data.json')
+                            .then(response => response.json())
+                            .then(data => {
+                                const projectsContainer = document.getElementById('projects-container');
+                                data.projects.forEach(project => {
+                                    const projectCard = document.createElement('div');
+                                    projectCard.classList.add('mb-12', 'p-4', 'md:w-1/2');
+            
+                                    projectCard.innerHTML = `
+                                        <div class="rounded-md shadow-md overflow-hidden">
+                                            <img src="${project.image}" alt="${project.title}" class="w-full">
+                                        </div>
+                                        <h3>
+                                            <a href="${project.link}" class="block mt-5 mb-3 font-semibold text-xl text-dark hover:text-primary truncate" target="_blank">${project.title}</a>
+                                        </h3>
+                                        <p class="font-medium text-base text-secondary">${project.description}</p>
+                                    `;
+                                    projectsContainer.appendChild(projectCard);
+                                });
+                            })
+                            .catch(error => console.error('Error fetching data:', error));
+                    });
+                </script>
             </div>
         </div>
     </section>
@@ -191,13 +171,30 @@
             </div>
 
             <div class="w-full px-4">
-                <div class="flex flex-wrap items-center justify-center">
-                    <a href="https://lmizakat.org/" class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8" target="_blank">
-                        <img src="dist/img/clients/lmi.png" alt="LMI">
-                    </a>
-                    <a href="https://www.bbsolusindo.com/" class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8" target="_blank">
-                        <img src="dist/img/clients/bbs.png" alt="BBS">
-                    </a>
+                <div id="clients-container" class="flex flex-wrap items-center justify-center">
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            fetch('data.json')
+                                .then(response => response.json())
+                                .then(data => {
+                                    const clientsContainer = document.getElementById('clients-container');
+                                    data.clients.forEach(client => {
+                                        const clientLink = document.createElement('a');
+                                        clientLink.href = client.website;
+                                        clientLink.target = '_blank';
+                                        clientLink.classList.add('max-w-[120px]', 'mx-4', 'py-4', 'grayscale', 'opacity-60', 'transition', 'duration-500', 'hover:grayscale-0', 'hover:opacity-100', 'lg:mx-6', 'xl:mx-8');
+                
+                                        const clientImg = document.createElement('img');
+                                        clientImg.src = client.image;
+                                        clientImg.alt = client.name;
+                
+                                        clientLink.appendChild(clientImg);
+                                        clientsContainer.appendChild(clientLink);
+                                    });
+                                })
+                                .catch(error => console.error('Error fetching data:', error));
+                        });
+                    </script>
                 </div>
             </div>
         </div>
@@ -214,19 +211,35 @@
                     <p class="font-medium text-md text-secondary md:text-lg">Berikut adalah beberapa kegiatan terbaru saya. Ikuti dan simak ceritanya, semoga Anda termotivasi!</p>
                 </div>
 
-                <div class="flex flex-wrap">
-                    <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
-                            <img src="dist/img/blog/gws.png" alt="GWS" class="w-full">
-                            <div class="py-8 px-6">
-                                <h3>
-                                    <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Project angkatan MSIB Batch 5 LMI</a>
-                                </h3>
-                                <p class="font-medium text-base text-secondary mb-6">Saya dengan penuh semangat mempersembahkan gerakan "No Food Waste", sebuah upaya kolaboratif untuk mengubah paradigma kita terhadap pembuangan makanan yang masih layak konsumsi. Bersama-sama, kita dapat menciptakan perubahan positif dan mengurangi pemborosan makanan. Hasil dari acara ini akan disalurkan langsung kepada masyarakat yang membutuhkan. Kami berkomitmen untuk memastikan bahwa setiap sumbangan makanan benar-benar sampai ke tangan yang memerlukan.</p>
-                                <a href="#" class="font-medium text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Baca selengkapnya</a>
-                            </div>
-                        </div>
-                    </div>
+                <div id="blog-container" class="flex flex-wrap">
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            fetch('data.json')
+                                .then(response => response.json())
+                                .then(data => {
+                                    const blogContainer = document.getElementById('blog-container');
+                                    data.blog.forEach(post => {
+                                        const postCard = document.createElement('div');
+                                        postCard.classList.add('w-full', 'px-4', 'lg:w-1/2', 'xl:w-1/3');
+                
+                                        postCard.innerHTML = `
+                                            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                                                <img src="${post.image}" alt="${post.title}" class="w-full">
+                                                <div class="py-8 px-6">
+                                                    <h3>
+                                                        <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">${post.title}</a>
+                                                    </h3>
+                                                    <p class="font-medium text-base text-secondary mb-6">${post.content}</p>
+                                                    <a href="#" class="font-medium text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Baca selengkapnya</a>
+                                                </div>
+                                            </div>
+                                        `;
+                                        blogContainer.appendChild(postCard);
+                                    });
+                                })
+                                .catch(error => console.error('Error fetching data:', error));
+                        });
+                    </script>
                 </div>
             </div>
         </div>
@@ -244,24 +257,22 @@
                 </div>
             </div>
 
-            <form>
+            <form action="https://formspree.io/f/mpwapgqe" method="post">
                 <div class="w-full lg:w-2/3 lg:mx-auto">
                 <div class="w-full px-4 mb-8">
                     <label for="name" class="text-base text-primary font-bold">Nama</label>
-                    <input type="text" id="name" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
+                    <input type="text" name="name" id="name" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
                 </div>
                 <div class="w-full px-4 mb-8">
                     <label for="email" class="text-base text-primary font-bold">Email</label>
-                    <input type="email" id="email" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
+                    <input type="email" name="email" id="email" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
                 </div>
                 <div class="w-full px-4 mb-8">
                     <label for="message" class="text-base text-primary font-bold">Pesan</label>
-                    <textarea id="message" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32"></textarea>
+                    <textarea type="text" id="message" name="message" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32"></textarea>
                 </div>
                 <div class="w-full px-4">
-                    <a href="mailto:ammarmojur@gmail.com">
-                        <button class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full w-full hover:opacity-80 hover:shadow-lg transition duration-500">Kirim</button>
-                    </a>
+                        <button type="submit" class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full w-full hover:opacity-80 hover:shadow-lg transition duration-500">Kirim</button>
                 </div>
                 </div>
             </form>

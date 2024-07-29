@@ -1,0 +1,66 @@
+{
+    "projects": [
+        {
+            "title": "Berkah Bersama Solusindo",
+            "description": "Saya dengan antusias menerima tawaran untuk mengembangkan landing page untuk layanan Jasa Sistem & Design Penerangan terbaik di Jakarta. Proyek ini tidak hanya menantang, tetapi juga memungkinkan saya untuk menggabungkan kreativitas dan keahlian teknis saya untuk menciptakan pengalaman online yang mengesankan.",
+            "image": "dist/img/portfolio/bbs.jpg",
+            "link": "https://www.bbsolusindo.com/"
+        },
+        {
+            "title": "Infakin",
+            "description": "Saya turut berkontribusi dalam pembuatan web Infakin selama magang di MSIB Batch 5 di Lembaga Manajemen Infaq Surabaya. Infakin adalah platform penggalangan dana online yang mempermudah proses berdonasi dengan fitur-fitur praktis. Antarmuka yang simpel, pembayaran online yang aman, dan pemantauan kemajuan kampanye menjadikan Infakin sebagai pilihan yang nyaman untuk mendukung aksi kemanusiaan. Saya bangga telah berperan dalam menciptakan solusi yang bermanfaat ini.",
+            "image": "dist/img/portfolio/infakin.jpg",
+            "link": "https://infak.in/"
+        },
+        {
+            "title": "Sirent",
+            "description": "Aplikasi Sirent adalah sebuah platform yang dikembangkan dalam proyek MSIB Batch 6 di PT. Surabaya Industrial Estate Rungkut (SIER). Aplikasi ini dirancang untuk memudahkan proses peminjaman mobil dan ruangan secara efisien. Dengan Sirent, pengguna dapat dengan mudah melakukan reservasi, memantau ketersediaan, dan mengelola peminjaman kendaraan serta ruang pertemuan. Aplikasi ini diharapkan dapat meningkatkan produktivitas dan efisiensi operasional di lingkungan industri dengan memberikan solusi yang terintegrasi dan user-friendly untuk kebutuhan logistik dan manajemen ruang.",
+            "image": "dist/img/portfolio/sirent.png",
+            "link": "https://dev-sirent.sier.id/"
+        },
+        {
+            "title": "Warungbuku",
+            "description": "Membangun aplikasi WarungBuku, sebuah platform yang memfasilitasi pembelian buku berdasarkan kategori dengan menggunakan PHP native. Aplikasi ini dirancang untuk memberikan pengalaman yang intuitif dan efisien bagi pengguna yang mencari buku sesuai minat mereka. Dengan WarungBuku, kami berkomitmen untuk memberikan pengalaman belanja buku online yang menyenangkan dan memuaskan bagi setiap pengguna. Sayangnya aplikasi ini belom dilanjutkan untuk pembayaran via browser.",
+            "image": "dist/img/portfolio/warungbuku.jpg",
+            "link": "https://kreasi.nurulfikri.ac.id/muha21082ti/projek-pdpl/"
+        },
+        {
+            "title": "Movie App",
+            "description": "Mengembangkan aplikasi Movie App, sebuah platform yang menyediakan informasi terkini seputar film-film yang sedang populer, tayang, dan mendapat rating tinggi. Aplikasi ini memanfaatkan API dari TMDb untuk menyajikan data yang akurat dan terpercaya. Dengan Movie App, pengguna dapat dengan mudah menjelajahi dunia perfilman dan mendapatkan insight tentang film-film yang paling diminati saat ini. Saya berbangga telah membangun pengalaman informasi film yang memikat melalui aplikasi ini.",
+            "image": "dist/img/portfolio/movie-app.jpg",
+            "link": "https://movie-app-loverman.vercel.app/"
+        },
+        {
+            "title": "Geek Application",
+            "description": "Membangun platform Geek, sebuah sumber informasi kampus terkemuka di Indonesia yang juga menyediakan tips & trik bermanfaat. Salah satu fitur utama yang saya kontribusikan adalah tes minat bakat yang membantu pengguna menentukan jurusan yang sesuai dengan minat dan potensi mereka. Dengan Geek, kami berkomitmen untuk memberikan panduan yang komprehensif dan bermanfaat bagi para calon mahasiswa Indonesia. Saya bangga dapat membangun platform ini untuk membantu calon mahasiswa dalam mengambil keputusan yang cerdas mengenai pendidikan mereka.",
+            "image": "dist/img/portfolio/geek.png",
+            "link": "https://geek-sepia.vercel.app//"
+        }
+    ],
+    
+    "clients": [
+        {
+            "name": "LMI",
+            "image": "dist/img/clients/lmi.png",
+            "website": "https://lmizakat.org/"
+        },
+        {
+            "name": "BBS",
+            "image": "dist/img/clients/bbs.png",
+            "website": "https://www.bbsolusindo.com/"
+        },
+        {
+            "name": "SIER",
+            "image": "dist/img/clients/sier.png",
+            "website": "https://sier.id/"
+        }
+    ],
+
+    "blog": [
+        {
+            "title": "Project angkatan MSIB Batch 5 LMI",
+            "content": "Saya dengan penuh semangat mempersembahkan gerakan No Food Waste, sebuah upaya kolaboratif untuk mengubah paradigma kita terhadap pembuangan makanan yang masih layak konsumsi. Bersama-sama, kita dapat menciptakan perubahan positif dan mengurangi pemborosan makanan. Hasil dari acara ini akan disalurkan langsung kepada masyarakat yang membutuhkan. Kami berkomitmen untuk memastikan bahwa setiap sumbangan makanan benar-benar sampai ke tangan yang memerlukan.",
+            "image": "dist/img/blog/gws.png"
+        }
+    ]
+}
